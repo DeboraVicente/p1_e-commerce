@@ -2,10 +2,8 @@
 
 Responsável por gerenciar os produtos disponíveis no sistema.
 
-## Porta: `8081`
-## Banco: `db_catalog`
-
----
+Porta: `8081`
+Banco: `db_catalog`
 
 ## Estrutura catalog
  
@@ -65,27 +63,20 @@ ecommerce-microsservicos/
 { "id": 1, "message": "Produto criado com sucesso" }
 ```
 
----
-
 ## Swagger UI
 ```
 http://localhost:8081/swagger-ui.html
 ```
 
----
-
 ## Como executar
 
-```bash
-# 1. Crie o banco
+#### 1. Crie o banco
 [Configuração do Banco](https://github.com/DeboraVicente/p1_e-commerce/blob/main/README.md#configura%C3%A7%C3%A3o-dos-bancos-de-dados)
 
-# 2. Esteja no projeto
-cd .\catalog-service\   
+#### 2. Esteja no projeto
+`cd .\catalog-service\`
 
-# 3. Execute
-mvn spring-boot:run
-```
-
+#### 3. Execute
+`mvn spring-boot:run`
 
 ## Regras

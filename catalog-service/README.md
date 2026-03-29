@@ -7,6 +7,27 @@ Responsável por gerenciar os produtos disponíveis no sistema.
 
 ---
 
+## Estrutura catalog
+ 
+```
+ecommerce-microsservicos/
+│
+├── catalog-service/
+│   ├── src/
+│   │   ├── java/com/ecommerce/catalog
+│   │   │   ├── controllers
+│   │   │   ├── dto
+│   │   │   ├── models
+│   │   │   ├── repositories
+│   │   │   └── services
+│   │   ├── resources/
+│   │   │   └── application.properties
+│   ├── pom.xml
+│   └── README.md
+
+```
+
+
 ## Endpoints
 
 | Método | Rota            | Descrição              |
@@ -57,19 +78,14 @@ http://localhost:8081/swagger-ui.html
 
 ```bash
 # 1. Crie o banco
-mysql -u root -p -e "CREATE DATABASE db_catalog;"
+[Configuração do Banco](https://github.com/DeboraVicente/p1_e-commerce/blob/main/README.md#configura%C3%A7%C3%A3o-dos-bancos-de-dados)
 
-# 2. Execute
+# 2. Esteja no projeto
+cd .\catalog-service\   
+
+# 3. Execute
 mvn spring-boot:run
 ```
 
-## Configuração (application.properties)
-```properties
-server.port=8081
-spring.datasource.url=jdbc:mysql://localhost:3306/db_catalog
-spring.datasource.username=ecommerce
-spring.datasource.password=ecommerce123
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-springdoc.swagger-ui.path=/swagger-ui.html
-```
+
+## Regras

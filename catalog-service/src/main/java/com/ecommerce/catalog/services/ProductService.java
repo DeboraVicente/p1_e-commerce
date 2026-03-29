@@ -16,15 +16,17 @@ public class ProductService {
         return repository.findAll();
     }
 
-    public List<Product> listProduct(Number id){
-        return repository.getById(id);
+    public Product listProduct(Long id){
+        return repository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
     }
 
-    public Product save(Product product) {
+    public Product create(Request request) {
+        Product product = new Product();
+
+        product.setDescription(request.getDescription());
+        product.setValue(request.getValue());
+
         return repository.save(product);
-    }
-
-    public Object create(Request request) {
-        throw new UnsupportedOperationException("Unimplemented method 'create'");
     }
 }

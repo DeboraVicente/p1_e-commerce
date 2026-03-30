@@ -5,7 +5,7 @@ public class InventoryDto {
     public static class Request {
         private Integer quantity;
         
-         public Integer getQuantity() {
+        public Integer getQuantity() {
             return quantity;
         }
 

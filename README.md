@@ -107,6 +107,14 @@ CREATE TABLE inventory (
 );
 ```
 
+## Portas dos Serviços
+
+- catalog-service = 8081
+- user-service = 8082
+- order-service	= 8083
+- inventory-service	= 8084
+- payment-service = 8085
+
 ## Regras Arquiteturais
  
 - Cada serviço possui **seu próprio banco de dados** MySQL

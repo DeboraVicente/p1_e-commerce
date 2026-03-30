@@ -1,7 +1,7 @@
-package com.ecommerce.orders.controllers;
+package com.ecommerce.order.controller;
 
-import com.ecommerce.orders.dto.OrderDto;
-import com.ecommerce.orders.services.OrderService;
+import com.ecommerce.order.dto.OrderDTO;
+import com.ecommerce.order.service.OrderService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +21,9 @@ public class OrderController {
 
     @PostMapping
     @Operation(summary = "Cria novo pedido — orquestra catálogo, estoque e pagamento")
-    public ResponseEntity<?> create(@RequestBody OrderDto.Request request) {
+    public ResponseEntity<?> create(@RequestBody OrderDTO.Request request) {
         try {
-            OrderDto.Response response = service.create(request);
+            OrderDTO.Response response = service.create(request);
             return ResponseEntity.status(HttpStatus.CREATED).body(response);
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", e.getMessage()));

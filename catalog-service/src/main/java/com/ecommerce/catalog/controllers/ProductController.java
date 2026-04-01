@@ -1,8 +1,6 @@
 package com.ecommerce.catalog.controllers;
 
 import com.ecommerce.catalog.dto.ProductDto;
-import com.ecommerce.catalog.dto.ProductDto.Request;
-import com.ecommerce.catalog.dto.ProductDto.Response;
 import com.ecommerce.catalog.dto.ProductDto.ResponseCreate;
 import com.ecommerce.catalog.models.Product;
 import com.ecommerce.catalog.services.ProductService;

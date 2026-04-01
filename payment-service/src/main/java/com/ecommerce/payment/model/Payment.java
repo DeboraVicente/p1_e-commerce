@@ -15,8 +15,7 @@ public class Payment {
 
     private String status;
 
-    public Payment() {
-    }
+    public Payment() {}
 
     public Long getId() {
         return id;

@@ -1,23 +1,15 @@
 package com.ecommerce.user.controller;
 
-import com.ecommerce.user.model.User;
+import com.ecommerce.user.dto.UserDto;
 import com.ecommerce.user.service.UserService;
-
-// ===== INÍCIO SWAGGER IMPORTS =====
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-// ===== FIM SWAGGER IMPORTS =====
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
 @RestController
 @RequestMapping("/users")
-// ===== INÍCIO SWAGGER CLASS =====
 @Tag(name = "User Service", description = "Operações de usuários")
-// ===== FIM SWAGGER CLASS =====
 public class UserController {
 
     private final UserService service;
@@ -26,25 +18,17 @@ public class UserController {
         this.service = service;
     }
 
-    // ===== INÍCIO SWAGGER METHOD =====
     @Operation(summary = "Criar usuário")
-    // ===== FIM SWAGGER METHOD =====
     @PostMapping
-    public ResponseEntity<?> createUser(@RequestBody User user) {
-        User savedUser = service.save(user);
-        return ResponseEntity.ok(Map.of(
-                "id", savedUser.getId(),
-                "status", "SUCCESS"
-        ));
+    public ResponseEntity<UserDto.Response> createUser(@RequestBody UserDto.Request request) {
+        return ResponseEntity.ok(service.save(request));
     }
 
-    // ===== INÍCIO SWAGGER METHOD =====
     @Operation(summary = "Buscar usuário por ID")
-    // ===== FIM SWAGGER METHOD =====
     @GetMapping("/{id}")
-    public ResponseEntity<?> getUserById(@PathVariable Long id) {
+    public ResponseEntity<UserDto.Response> getUserById(@PathVariable Long id) {
         return service.findById(id)
-                .<ResponseEntity<?>>map(ResponseEntity::ok)
+                .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 }

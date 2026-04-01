@@ -1,7 +1,6 @@
 package com.ecommerce.payment.model;
 
 import jakarta.persistence.*;
-import java.sql.Timestamp;
 
 @Entity
 @Table(name = "payment")
@@ -11,22 +10,35 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long orderid;
+    @Column(name = "orderid")
+    private Long orderId;
+
     private String status;
 
-    @Column(name = "transaction_date")
-    private Timestamp transactionDate;
+    public Payment() {
+    }
 
-    public Payment() {}
+    public Long getId() {
+        return id;
+    }
 
-    public Long getId() { return id; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public Long getOrderid() { return orderid; }
-    public void setOrderid(Long orderid) { this.orderid = orderid; }
+    public Long getOrderId() {
+        return orderId;
+    }
 
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
 
-    public Timestamp getTransactionDate() { return transactionDate; }
-    public void setTransactionDate(Timestamp transactionDate) { this.transactionDate = transactionDate; }
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

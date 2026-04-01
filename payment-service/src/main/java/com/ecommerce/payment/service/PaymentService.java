@@ -14,9 +14,6 @@ public class PaymentService {
     }
 
     public Payment processPayment(Payment payment) {
-        if (payment.getStatus() == null || payment.getStatus().isBlank()) {
-            payment.setStatus("APROVADO");
-        }
         return repository.save(payment);
     }
 }

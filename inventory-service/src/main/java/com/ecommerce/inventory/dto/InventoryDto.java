@@ -12,15 +12,15 @@ public class InventoryDto {
     }
 
     public static class Response {
-        private Long productid;
+        private Long productId;
         private Integer quantity;
 
-        public Long getProductid() {
-            return productid;
+        public Long getProductId() {
+            return productId;
         }
 
-        public void setProductid(Object productId) {
-            throw new UnsupportedOperationException("Unimplemented method 'setProductid'");
+        public void setProductId(Long productId) {
+            this.productId = productId;
         }
 
         public Integer getQuantity() {
@@ -28,30 +28,30 @@ public class InventoryDto {
         }
 
         public void setQuantity(Integer quantity) {
-            throw new UnsupportedOperationException("Unimplemented method 'setQuantity'");
+            this.quantity = quantity;
         }
 
 
     }
 
     public static class UpdateResponse {
-        private Long productid;
+        private Long productId;
         private String status;
         
-        public Long getProductid() {
-            return productid;
+        public Long getProductId() {
+            return productId;
         }
         
-        public void setProductid(Long productId2) {
-            throw new UnsupportedOperationException("Unimplemented method 'setProductid'");
+        public void setProductId(Long productId) {
+            this.productId = productId;
         }
 
         public String getStatus() {
             return status;
         }
 
-        public void setStatus(String string) {
-            throw new UnsupportedOperationException("Unimplemented method 'setStatus'");
+        public void setStatus(String status) {
+            this.status = status;
         }
     }
 }

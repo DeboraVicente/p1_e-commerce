@@ -65,7 +65,7 @@ CREATE DATABASE IF NOT EXISTS db_inventory;
 USE db_inventory;
 CREATE TABLE inventory (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    productid BIGINT NOT NULL,
+    product_id BIGINT NOT NULL,
     quantity INT NOT NULL
 );
 
@@ -74,15 +74,17 @@ CREATE DATABASE IF NOT EXISTS db_order;
 USE db_order;
 CREATE TABLE orders (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    userid BIGINT NOT NULL,
+    user_id BIGINT NOT NULL,
     status VARCHAR(50) NOT NULL,
-    paymentAmount DECIMAL(10,2) NOT NULL
+    payment_amount DECIMAL(10,2) NOT NULL
 );
 
 CREATE TABLE orders_items (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    orderid BIGINT NOT NULL,
-    productid BIGINT NOT NULL,
+    order_id BIGINT NOT NULL,
+    product_id BIGINT NOT NULL,
+    quantity INT NOT NULL,
+    unit_price DECIMAL(10,2) NOT NULL;
     CONSTRAINT fk_order FOREIGN KEY (orderid) REFERENCES orders(id)
 ); 
 
@@ -91,19 +93,9 @@ CREATE DATABASE IF NOT EXISTS db_payment;
 USE db_payment;
 CREATE TABLE payment (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    orderid BIGINT NOT NULL,
+    order_id BIGINT NOT NULL,
     status VARCHAR(50) NOT NULL,
     transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- Database: db_inventory
-CREATE DATABASE IF NOT EXISTS db_inventory;
-USE db_inventory;
-
-CREATE TABLE inventory (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    productid BIGINT NOT NULL,
-    quantity INT NOT NULL
 );
 ```
 

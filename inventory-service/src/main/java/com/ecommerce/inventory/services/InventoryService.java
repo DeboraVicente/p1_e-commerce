@@ -17,7 +17,7 @@ public class InventoryService {
                 .orElseThrow(() -> new RuntimeException("Produto não encontrado no estoque"));
 
         InventoryDto.Response r = new InventoryDto.Response();
-        r.setProductid(inv.getProductId());
+        r.setProductId(inv.getProductId());
         r.setQuantity(inv.getQuantity());
         return r;
     }
@@ -30,11 +30,15 @@ public class InventoryService {
             return novo;
         });
 
+        if (request.getQuantity() < 0) {
+            throw new RuntimeException("A quantidade não pode ser negativa");
+        }
+
         inv.setQuantity(request.getQuantity());
         repository.save(inv);
 
         InventoryDto.UpdateResponse r = new InventoryDto.UpdateResponse();
-        r.setProductid(productId);
+        r.setProductId(productId);
         r.setStatus("ATUALIZADO");
         return r;
     }

@@ -16,18 +16,18 @@ public class Inventory {
     private Integer quantity;
 
     public Integer getQuantity() {
-        throw new UnsupportedOperationException("Unimplemented method 'getQuantity'");
+        return quantity;
     }
 
-    public void setQuantity(int i) {
-        throw new UnsupportedOperationException("Unimplemented method 'setQuantity'");
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
-    public void setProductId(Long productId2) {
-        throw new UnsupportedOperationException("Unimplemented method 'setProductId'");
+    public Long getProductId() {
+        return productId;
     }
 
-    public Object getProductId() {
-        throw new UnsupportedOperationException("Unimplemented method 'getProductId'");
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 }

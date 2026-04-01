@@ -1,6 +1,6 @@
 package com.ecommerce.payment.controller;
 
-import com.ecommerce.payment.model.Payment;
+import com.ecommerce.payment.dto.PaymentDto;
 import com.ecommerce.payment.service.PaymentService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -20,7 +20,7 @@ public class PaymentController {
 
     @Operation(summary = "Processar pagamento")
     @PostMapping
-    public ResponseEntity<Payment> createPayment(@RequestBody Payment payment) {
-        return ResponseEntity.ok(service.processPayment(payment));
+    public ResponseEntity<PaymentDto.Response> createPayment(@RequestBody PaymentDto.Request request) {
+        return ResponseEntity.ok(service.processPayment(request));
     }
 }

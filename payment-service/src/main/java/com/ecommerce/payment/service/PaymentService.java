@@ -1,7 +1,7 @@
-package com.example.paymentservice.service;
+package com.ecommerce.payment.service;
 
-import com.example.paymentservice.model.Payment;
-import com.example.paymentservice.repository.PaymentRepository;
+import com.ecommerce.payment.model.Payment;
+import com.ecommerce.payment.repository.PaymentRepository;
 import org.springframework.stereotype.Service;
 
 @Service

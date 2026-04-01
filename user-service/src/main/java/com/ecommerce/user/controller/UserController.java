@@ -1,7 +1,7 @@
-package com.example.userservice.controller;
+package com.ecommerce.user.controller;
 
-import com.example.userservice.model.User;
-import com.example.userservice.service.UserService;
+import com.ecommerce.user.model.User;
+import com.ecommerce.user.service.UserService;
 
 // ===== INÍCIO SWAGGER IMPORTS =====
 import io.swagger.v3.oas.annotations.Operation;

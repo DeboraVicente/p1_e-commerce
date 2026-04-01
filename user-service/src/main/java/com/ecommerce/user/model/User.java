@@ -1,4 +1,4 @@
-package com.example.userservice.model;
+package com.ecommerce.user.model;
 
 import jakarta.persistence.*;
 

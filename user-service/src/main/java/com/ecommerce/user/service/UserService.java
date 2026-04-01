@@ -1,7 +1,7 @@
-package com.example.userservice.service;
+package com.ecommerce.user.service;
 
-import com.example.userservice.model.User;
-import com.example.userservice.repository.UserRepository;
+import com.ecommerce.user.model.User;
+import com.ecommerce.user.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

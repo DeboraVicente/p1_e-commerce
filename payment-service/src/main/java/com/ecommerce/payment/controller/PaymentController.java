@@ -1,7 +1,7 @@
-package com.example.paymentservice.controller;
+package com.ecommerce.payment.controller;
 
-import com.example.paymentservice.model.Payment;
-import com.example.paymentservice.service.PaymentService;
+import com.ecommerce.payment.model.Payment;
+import com.ecommerce.payment.service.PaymentService;
 
 // ===== INÍCIO SWAGGER IMPORTS =====
 import io.swagger.v3.oas.annotations.Operation;

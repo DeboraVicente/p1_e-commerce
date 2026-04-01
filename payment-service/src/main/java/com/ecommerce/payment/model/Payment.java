@@ -1,4 +1,4 @@
-package com.example.paymentservice.model;
+package com.ecommerce.payment.model;
 
 import jakarta.persistence.*;
 import java.sql.Timestamp;

@@ -15,12 +15,10 @@ public class PaymentService {
     }
 
     public PaymentDto.Response processPayment(PaymentDto.Request request) {
-
         Payment payment = new Payment();
         payment.setOrderId(request.getOrderId());
 
-        // Serviço decide o status
-        payment.setStatus("APROVADO");
+        payment.setStatus(determinePaymentStatus(request));
 
         Payment savedPayment = repository.save(payment);
 
@@ -30,5 +28,9 @@ public class PaymentService {
         response.setStatus(savedPayment.getStatus());
 
         return response;
+    }
+
+    private String determinePaymentStatus(PaymentDto.Request request) {
+        return "APROVADO";
     }
 }

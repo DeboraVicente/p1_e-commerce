@@ -1,6 +1,6 @@
 # Payment Service
 
-Responsável por processar pagamentos de pedidos. Recebe um `orderId` e um `status`, persiste no banco e retorna o resultado do pagamento.
+Processa pagamentos de pedidos. O próprio serviço define o resultado do pagamento (APROVADO ou RECUSADO).
 
 Porta: `8085`  
 Banco: `db_payment`
@@ -20,6 +20,7 @@ ecommerce-microsservicos/
 │ ├── src/
 │ │ ├── java/com/ecommerce/payment
 │ │ │ ├── controller
+│ │ │ ├── dto
 │ │ │ ├── model
 │ │ │ ├── repository
 │ │ │ └── service
@@ -33,9 +34,10 @@ ecommerce-microsservicos/
 
 ```
 POST /payment
-├── Recebe orderId e status
-├── Persiste pagamento no banco
-└── Retorna dados do pagamento (id, orderId, status)
+  ├── recebe orderId
+  ├── define status do pagamento (APROVADO ou RECUSADO)
+  ├── persiste no banco
+  └── retorna resultado
 ```
 
 # Swagger

@@ -116,13 +116,4 @@ CREATE TABLE payment (
 - Catalog Service **não conhece** estoque nem pedidos
 - Inventory Service **rejeita** pedidos com quantidade superior ao disponível
  
-## Pré-requisitos
-
-| Ferramenta       | Versão mínima |
-|------------------|---------------|
-| Java (JDK)       | 17+           |
-| Maven            | 3.8+          |
-| MySQL Server     | 8.0+          |
-| Spring Boot      | 3.x           |
-| springdoc-openapi | 2.x (Swagger UI) |
- 
+---

@@ -7,13 +7,7 @@ Banco: `db_user`
 
 # Dependências (devem estar no ar antes de subir este serviço)
 
-
-| Serviço           | URL                   |
-|-------------------|------------------------|
-| Order Service     | http://localhost:8083  |
-| Catalog Service   | http://localhost:8081  |
-| Inventory Service | http://localhost:8084  |
-| Payment Service   | http://localhost:8085  |
+Este serviço não depende de outros microsserviços para funcionar.
 
 # Estrutura user
 
@@ -24,6 +18,7 @@ ecommerce-microsservicos/
 │ ├── src/
 │ │ ├── java/com/ecommerce/user
 │ │ │ ├── controller
+│ │ │ ├── dto
 │ │ │ ├── model
 │ │ │ ├── repository
 │ │ │ └── service

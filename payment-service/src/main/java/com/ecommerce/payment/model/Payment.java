@@ -10,12 +10,13 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "orderid")
+    @Column(name = "order_id")
     private Long orderId;
 
     private String status;
 
-    public Payment() {}
+    public Payment() {
+    }
 
     public Long getId() {
         return id;

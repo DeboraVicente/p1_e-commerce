@@ -1,6 +1,7 @@
 package com.ecommerce.catalog.controllers;
 
 import com.ecommerce.catalog.dto.ProductDto;
+import com.ecommerce.catalog.dto.ProductDto.ResponseCreate;
 import com.ecommerce.catalog.models.Product;
 import com.ecommerce.catalog.services.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -11,6 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
+
 
 @RestController
 @RequestMapping("/product")
@@ -28,13 +31,20 @@ public class ProductController {
 
     @GetMapping("/{id}")
     @Operation(summary = "Busca produto por ID")
-    public ResponseEntity<Product> getById(@PathVariable Long id) {
-        return ResponseEntity.ok(service.listProduct(id));
+    public ResponseEntity<?> getById(@PathVariable Long id) {
+        try {
+            return ResponseEntity.ok(service.listProduct(id));
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error", e.getMessage()));
+        }
     }
 
     @PostMapping
     @Operation(summary = "Cadastra novo produto")
-    public ResponseEntity<Object> create(@RequestBody ProductDto.Request request) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(service.create(request));
+    public ResponseCreate create(@RequestBody ProductDto.Request request) {
+
+        var product = ResponseEntity.status(HttpStatus.CREATED).body(service.create(request)); 
+
+        return new ResponseCreate(product.getBody().getId(), "Produto criado com sucesso");
     }
 }

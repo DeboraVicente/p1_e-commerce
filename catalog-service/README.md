@@ -78,5 +78,3 @@ http://localhost:8081/swagger-ui.html
 
 #### 3. Execute
 `mvn spring-boot:run`
-
-## Regras

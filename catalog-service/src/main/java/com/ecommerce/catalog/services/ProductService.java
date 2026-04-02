@@ -5,6 +5,7 @@ import com.ecommerce.catalog.models.Product;
 import com.ecommerce.catalog.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service

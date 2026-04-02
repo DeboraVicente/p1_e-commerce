@@ -52,6 +52,22 @@ ecommerce-microsservicos/
 { "productid": 1, "status": "ATUALIZADO" }
 ```
 
+### PUT /inventory/{productId}/decrement
+**Request:**
+```json
+{ "productId ": 30,  "quantity ": 5 }
+```
+**Response 200:**
+```json
+{ "status": "DECREMENTADO" }
+```
+**Response 400:**
+```json
+{
+  "error": "Produto não encontrado no estoque: 15"
+}
+```
+
 ## Swagger UI
 ```
 http://localhost:8084/swagger-ui.html
